@@ -1,0 +1,25 @@
+# User-specific ignore rules applicable to all repositories
+# https://help.github.com/articles/ignoring-files
+
+#
+# Mac
+#
+.DS_Store
+
+#
+# IntelliJ IDEA
+#
+# directory-based (preferred)
+.idea
+# file-based (legacy)
+*.ipr
+*.iws
+# module config
+*.iml
+
+#
+# emacs
+#
+*~
+.#*
+*#
