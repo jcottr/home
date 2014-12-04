@@ -1,5 +1,8 @@
 PATH=$PATH:$HOME/bin
 
+# Show the exit code of the last command ($?) in green if zero, bold red otherwise
+PROMPT="[%(?,%F{green}%?%f,%F{red}%B%?%b%f)]%% "
+
 # xterms get a title bar message
 case $TERM in
   *xterm*|rxvt|(dt|k|E)term)
