@@ -1,7 +1,9 @@
 PATH=$PATH:$HOME/bin
 
-# Show the exit code of the last command ($?) in green if zero, bold red otherwise
-PROMPT="[%(?,%F{green}%?%f,%F{red}%B%?%b%f)]%% "
+# Show date, time, user, host, and last exit code ($?). If root, user is bold
+# and yellow. If exit code non-zero, it is displayed in bold red, otherwise in
+# normal green. Prompt character is # if root, % otherwise.
+PROMPT="[%D{%F %T}] %(!,%F{yellow}%B%n%b%f,%n)@%m [%(?,%F{green}%?%f,%F{red}%B%?%b%f)] %# "
 
 # xterms get a title bar message
 case $TERM in
@@ -18,5 +20,9 @@ case $TERM in
     set_xt
     ;;
 esac
+
+# Use Emacs in windowless mode and Emacs standard key bindings
+export EDITOR="emacs -nw"
+bindkey -e
 
 alias chrome="open /Applications/Google\ Chrome.app"
